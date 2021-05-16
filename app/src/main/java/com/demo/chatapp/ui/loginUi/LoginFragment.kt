@@ -74,13 +74,6 @@ class LoginFragment : Fragment() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-//        val currentUser = auth.currentUser
-//        updateUI(currentUser)
-    }
-
     private fun signIn() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
@@ -97,7 +90,7 @@ class LoginFragment : Fragment() {
                 val account = task.getResult(ApiException::class.java)!!
 
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.id)
-                
+
                 viewModel.firebaseAuthWithGoogle(account).observe(viewLifecycleOwner, {
                     when (it.status) {
                         Resource.Status.SUCCESS -> {
