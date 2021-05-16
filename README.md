@@ -1,2 +1,2 @@
 # Firebase-Google-SignIn-Kotlin-MVVM
- Firebase SignIN using kotlin & MVVM +JetPack Data Store
+ Firebase Google SignIn using kotlin + MVVM + JetPack Data Store + Jetpack Hilt DI
